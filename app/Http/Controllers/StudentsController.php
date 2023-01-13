@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-//use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StudentsCreateRequest;
 use App\Http\Requests\StudentsUpdateRequest;
 
@@ -34,34 +33,6 @@ class StudentsController extends Controller
 
     // Método para crear un alumno
     public function create(StudentsCreateRequest $request) {
-
-        /*
-        $request->validate([
-            'name' => 'required'|'max:32',
-            'phone' => 'max:16',
-            'age' => 'numeric',
-            'password' => 'required'|'max:64',
-            'email' => 'required'|'email'|'unique:students'|'max:64',
-            'sex' => 'required',
-        ]);
-        */
-
-        /*
-        $validator = Validator::make($request->all(), [
-            'name' => 'required'|'max:32',
-            'phone' => 'max:16',
-            'age' => 'numeric',
-            'password' => 'required'|'max:64',
-            'email' => 'required'|'email'|'max:64',
-            'sex' => 'required',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect('post/create')
-                        ->withErrors($validator)
-                        ->withInput();
-        }
-*/
 
         DB::table('students')->insert([
             'name' => $request->input('name'),
