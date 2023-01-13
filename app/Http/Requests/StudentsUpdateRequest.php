@@ -24,11 +24,11 @@ class StudentsUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required'|'max:32',
+            'name' => 'required|max:32',
             'phone' => 'max:16',
             'age' => 'numeric',
-            'password' => 'required'|'max:64',
-            'email' => 'required'|'email'|'unique:students'|'max:64',
+            'password' => 'required|max:64',
+            'email' => 'required|email|unique:students|max:64',
             'sex' => 'required',
         ];
     }
